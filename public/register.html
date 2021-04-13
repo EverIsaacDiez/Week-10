@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="register">
+        <h1>Register</h1>
+        <form id='register' method="post">
+            <label>Email
+                <input id='register-email' type="email" required />
+                <div id="register-mail-validation"></div>
+            </label>
+            <label>Full name
+                <input id='register-name' type="text" required />
+                <div id="register-name-validation"></div>
+            </label>
+            <label>Password
+                <input id='register-password' type="password" required />
+                <div id="register-password-validation"></div>
+            </label>
+            <label>Confirm password
+                <input id='register-confirm-password' type="password" required />
+                <div id="register-cpassword-validation"></div>
+            </label>
+            <div id="buttons">
+                <button id="register-button" type="button">Create account</button>
+                <button type="button" onclick="cleanForm()">Reset fields</button>
+                
+            </div>
+            <a id='back-to-login' href="login.html" rel="noopener noreferrer">Back to login</a>
+
+            <div id="register-validation"></div>
+        </form>
+    </div>
+    <script src="../js/register.js"></script>
+</body>
+
+</html>
