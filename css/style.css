@@ -1,0 +1,239 @@
+.login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 470px;
+  margin-left: 35%;
+  margin-top: 2%;
+  padding: 7px;
+  border-radius: 10px;
+  color: rgb(19, 15, 18);
+  font-size: 45px;
+  font-family: initial;
+  font-weight: bolder;
+  background-color: rgba(214, 209, 209, 0.664);
+  box-shadow: 8px 12px #181616;
+}
+
+.login label{
+  font-family: initial;
+  font-size: 25px;
+  color: black;
+}
+
+.login input{
+  width: 85%;
+  margin: 5px;
+  padding: 15px 15px;
+  border: 2px solid rgb(44, 44, 44);
+  border-radius: 3px;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: initial;
+  background-color: rgba(230, 223, 223, 0.5);
+  box-shadow: 8px 12px #635d5d;
+  outline: none;
+}
+
+.login button{
+  width: 95%;
+  margin-left: 2%;
+  margin-top: 50px;
+  padding: 20px 15px;    
+  border: 0;
+  border-radius: 15px;
+  font-weight: bolder;
+  font-family: initial;
+  font-size: 20px;
+  background-color: rgb(107, 9, 9);
+  color: white;
+  outline: none;
+}
+
+#go-to-register-link{
+  margin-top: 30px;
+  font-size: 20px;
+  font-family: initial;
+  color: rgb(0, 0, 0);
+  text-decoration:lightslategray;
+}
+
+.register{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 720px;
+  margin-left: 35%;
+  margin-top: 1%;
+  padding: 20px;
+  font-size: 40px;
+  font-family: initial;
+  font-weight: bolder;
+  border-radius: 10px;
+  box-shadow: 10px 12px #222020;
+  background-color: rgba(221, 213, 213, 0.664);
+  color: black;
+}
+
+.register label{
+  font-size: 25px;
+  font-family: initial;
+  color: black;
+}
+   
+.register input{
+  width: 80%;
+  margin: 10px;
+  padding: 13px 10px;
+  border: 2px solid rgb(34, 32, 32);
+  border-radius: 5px;
+  font-weight: bolder;    
+  font-family: initial;
+  font-size: 20px;
+  box-shadow: 5px 5px #423a3a;
+  background-color: rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+#buttons-div{
+  margin-top: 25px;
+}
+
+.register button{
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px 10px;    
+  border: 0;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-family: initial;
+  font-size: 20px;
+  background-color: rgb(128, 26, 26);
+  color: rgb(255, 255, 255);
+  outline: none;
+}
+
+#login-validation{
+  display: block; 
+  position: absolute;
+  top: 83%;
+  left: 53%;
+  padding: 10px;
+  transform: translate(-50%,-50%);           
+  border-radius: 10px;
+  font-family: initial;
+  font-weight: bolder;
+  font-size: 30px; 
+  color:rgb(0, 0, 0);
+}
+
+#mail-validation{
+  display: none; 
+  position: absolute;   
+  left: 52%;
+  margin-top: 8px;
+  padding: 10px;
+  transform: translate(-50%,-50%);           
+  border-radius: 10px;
+  font-family: initial;
+  font-weight: bolder;
+  font-size: 20px; 
+  color:rgb(90, 6, 6);
+}
+
+#password-validation{
+  display: none; 
+  position: absolute;
+  top: 58%;
+  left: 52%;
+  margin-top: 8px;
+  padding: 10px;
+  transform: translate(-50%,-50%);           
+  border-radius: 10px;
+  font-family: initial;
+  font-weight: bolder;
+  font-size: 20px; 
+  color:rgb(78, 3, 3);
+ }
+
+#register-validation{
+  display: none; 
+  position: absolute;
+  top: 83%;
+  left: 83%;
+  padding: 10px;
+  transform: translate(-50%,-50%);           
+  border-radius: 10px;
+  font-family: initial;
+  font-weight: bolder;
+  font-size: 30px; 
+  color:rgb(88, 9, 9);
+}
+
+#register-mail-validation{
+  display: none; 
+  position: absolute;   
+  left: 52%;
+  margin-top: 8px;
+  padding: 10px;
+  transform: translate(-50%,-50%);           
+  border-radius: 10px;
+  font-family: initial;
+  font-weight: bolder;
+  font-size: 20px; 
+  color:rgb(78, 5, 5);
+}
+
+#register-name-validation{
+  display: none; 
+  position: absolute;   
+  left: 52%;
+  margin-top: 8px;
+  padding: 10px;
+  transform: translate(-50%,-50%);           
+  border-radius: 10px;
+  font-family: initial;
+  font-weight: bolder;
+  font-size: 20px; 
+  color:rgb(83, 5, 5);    
+}
+
+#register-password-validation{
+  display: none; 
+  position: absolute;   
+  left: 52%;
+  margin-top: 8px;
+  padding: 10px;
+  transform: translate(-50%,-50%);           
+  border-radius: 10px;
+  font-family: initial;
+  font-weight: bolder;
+  font-size: 20px; 
+  color:rgb(83, 6, 6);
+}
+
+#register-cpassword-validation{
+  display: none; 
+  position: absolute;   
+  left: 52%;
+  margin-top: 8px;
+  padding: 10px;
+  transform: translate(-50%,-50%);           
+  border-radius: 10px;
+  font-family: initial;
+  font-weight: bolder;
+  font-size: 20px; 
+  color:rgb(153, 10, 10);
+}
+
+#back-to-login{       
+  margin-top: 40px;
+  margin-left: 70px;
+  font-family: initial;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+}
