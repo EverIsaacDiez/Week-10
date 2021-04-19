@@ -30,7 +30,7 @@ nameInput.addEventListener("focus", validateFocusNameText)
 passwordInput.addEventListener("focus", validateFocusPasswordText)
 confirmPasswordInput.addEventListener("focus", validateFocusConfirmPasswordText)
 registerButton.addEventListener('click', validationsOk)
-registerButton.addEventListener('click', getEmail)
+registerButton.addEventListener('click', handleRegister)
 
 // Validations of email (blur event)
 function validateBlurEmailText() {
@@ -220,37 +220,43 @@ function validationsOk() {
     else {
         infoDiv.style.display = "block"
         infoDiv.style.color = "green"
-        infoDiv.innerText = `Registered Succesfully. Your account data is: ${emailInput.value} ${nameInput.value} ${passwordInput.value.type = "******"} ${confirmPasswordInput.value.type = "******"}`
-        return;
+      infoDiv.innerText = `Registered Succesfully. Your account data is: ${emailInput.value} ${nameInput.value} ${passwordInput.value.type = "******"} ${confirmPasswordInput.value.type = "******"}`
+      return;
     }
 }
 
 //function to test if an email is invalid
 function isEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        email
-    );
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
 }
 
 // Reset fields function
 function cleanForm() {
-    formWillReset.reset();
+  formWillReset.reset();
 }
 
-// Request HTTP through GET method
-async function getEmail() {
-    if (emailInput.value !== "" && emailInput.value !== null && passwordInput.value !== "" && passwordInput.value) {
-        try {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/users?email=${emailInput.value}`, {
-                method: 'get',
-            });
-            console.log('Completed', response);
-        } catch (err) {
-            console.error(`Error: ${err}`);
-        }
-    }
-
+// Request HTTP through POST method
+function handleRegister() {
+  const userInformation = {
+      email: emailInput.value,
+      fullName: nameInput.value,
+      password: passwordInput.value,
+  };
+  fetch('http://localhost:4000/userRegistration', {
+      method: 'POST',
+      body: JSON.stringify(userInformation),
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+      },
+  })
+      .then((response) => response.json())
+      .then((a) => console.log(a))
+      .catch((err) => console.log(err));
 }
+
 
 
 

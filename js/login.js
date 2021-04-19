@@ -27,51 +27,51 @@ loginButton.addEventListener('click', getEmail)
 
 // Validations of email (blur event)
 function validateBlurEmailText() {
-    if (emailInput.value === "" || emailInput.value === null) {
-     //   errorMailMessageBlur = ()
-        infoDivMail.style.display = "block"
-        infoDivMail.style.color = "red"
-        infoDivMail.innerText = "Email field is empty"
-        return
-    }
-    if (!isEmail(emailInput.value)) {
-        errorMailMessageBlur = ("Email is invalid")
-        infoDivMail.style.display = "block"
-        infoDivMail.style.color = "red"
-        infoDivMail.innerText = errorMailMessageBlur
-        return
-    }
+  if (emailInput.value === "" || emailInput.value === null) {
+  //   errorMailMessageBlur = ()
+  infoDivMail.style.display = "block"
+  infoDivMail.style.color = "red"
+  infoDivMail.innerText = "Email field is empty"
+  return
+  }
+  if (!isEmail(emailInput.value)) {
+    errorMailMessageBlur = ("Email is invalid")
+    infoDivMail.style.display = "block"
+    infoDivMail.style.color = "red"
+    infoDivMail.innerText = errorMailMessageBlur
+    return
+  }
 }
 
 // Validations of email (focus event)
 function validateFocusEmailText() {
-    if (emailInput.value === "" || emailInput.value === null) { //sacar
-        infoDivMail.style.display = "none"
-        return;
-    }
-    if (!isEmail(emailInput.value)) {
-        infoDivMail.style.display = "none"
-        return
-    }
+  if (emailInput.value === "" || emailInput.value === null) { //sacar
+    infoDivMail.style.display = "none"
+    return;
+  }
+  if (!isEmail(emailInput.value)) {
+    infoDivMail.style.display = "none"
+    return
+  }
 }
 
 // Validations of password (blur event)
 function validateBlurPasswordText() {
 
-    if (passwordInput.value === "" || passwordInput.value === null) {
-        errorPasswordMessageBlur = ("Password field is empty")
-        infoDivPassword.style.display = "block"
-        infoDivPassword.style.color = "red"
-        infoDivPassword.innerText = errorPasswordMessageBlur
-        return;
-    }
-    if (passwordInput.value.search(/[a-z]/) < 0) {
-        errorPasswordMessageBlur = ("Password must contain at least one lowercase letter")
-        infoDivPassword.style.display = "block"
-        infoDivPassword.style.color = "red"
-        infoDivPassword.innerText = errorPasswordMessageBlur
-        return;
-    }
+  if (passwordInput.value === "" || passwordInput.value === null) {
+    errorPasswordMessageBlur = ("Password field is empty")
+    infoDivPassword.style.display = "block"
+    infoDivPassword.style.color = "red"
+    infoDivPassword.innerText = errorPasswordMessageBlur
+    return;
+  }
+  if (passwordInput.value.search(/[a-z]/) < 0) {
+  errorPasswordMessageBlur = ("Password must contain at least one lowercase letter")
+  infoDivPassword.style.display = "block"
+  infoDivPassword.style.color = "red"
+  infoDivPassword.innerText = errorPasswordMessageBlur
+  return;
+  }
     if (passwordInput.value.search(/[A-Z]/) < 0) {
         errorPasswordMessageBlur = ("Password must contain at least one uppercase letter")
         infoDivPassword.style.display = "block"
@@ -179,18 +179,22 @@ function isEmail(email) {
     )
 }
 
-// Request HTTP through GET method
-async function getEmail() {
-    if (emailInput.value !== "" && emailInput.value !== null && passwordInput.value !== "" && passwordInput.value) {
-        try {
-            const response = await fetch(`https://jsonplaceholder.typicode.com/users?email=${emailInput.value}`, {
-                method: 'get',
-            });
-            console.log('Completed!', response);
-        } catch (err) {
-            console.error(`Error: ${err}`);
-        }
+//function that PUT info in backend 
+function handleLogin() {
+    const userInformation = {
+        email: emailInput.value,
+        password: passwordInput.value
     }
+    fetch('http://localhost:4000/userLogin', {
+        method: "PUT",
+        body: JSON.stringify(userInformation),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }).then(response => response.json())
+        .then(information => console.log(information))
+        .catch(err => console.log(err))
 }
 
 
